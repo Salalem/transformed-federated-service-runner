@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Salalem/admin-dashboard-bff.git"
+    "url": "git+https://github.com/Salalem/course-builder-bff.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Salalem/admin-dashboard-bff/issues"
+    "url": "https://github.com/Salalem/course-builder-bff/issues"
   },
-  "homepage": "https://github.com/Salalem/admin-dashboard-bff#readme"
+  "homepage": "https://github.com/Salalem/course-builder-bff#readme"
 }
