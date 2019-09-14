@@ -1,0 +1,11 @@
+stages:
+- name: Build & Push
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: salalemdockerhub/course-builder-bff
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
+notification: {}
