@@ -1,7 +1,7 @@
 #
-# Salalem Admin Dashboard Backend for Frontend Docker Image
+# Salalem Course Builder Backend for Frontend Docker Image
 #
-# Repository: https://github.com/Salalem/admin-dashboard-bff
+# Repository: https://github.com/Salalem/course-builder-bff
 # Maintainers:
 #   - Firas Kafri <firas@salalem.com>
 
@@ -9,7 +9,7 @@
 FROM node:carbon
 
 # Define environment variables.
-ENV PROJECT_NAME "admin-dashboard-bff"
+ENV PROJECT_NAME "course-builder-bff"
 ENV WORKSPACE_PATH "/workspace"
 ENV PROJECT_PATH $WORKSPACE_PATH/$PROJECT_NAME
 ENV SCRIPTS_PATH $PROJECT_PATH/Dockerfiles/scripts
