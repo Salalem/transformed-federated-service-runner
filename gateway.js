@@ -7,6 +7,12 @@ const LMS_SERVICE_NAME =  "lms"
 const LMS_SERVICE_URL =  process.env.LMS_SERVICE_URL
 const LMS_APP_API_KEY = process.env.LMS_APP_API_KEY
 
+const RESOURCES_SERVICE_NAME =  "resources"
+const RESOURCES_SERVICE_URL =  process.env.RESOURCES_SERVICE_URL
+
+const BODY_OF_KNOWLEDGE_SERVICE_NAME =  "body_of_knowledge"
+const BODY_OF_KNOWLEDGE_SERVICE_URL =  process.env.BODY_OF_KNOWLEDGE_SERVICE_URL
+
 const gateway = new ApolloGateway({
     introspectionHeaders: {
         "App-Api-Key": LMS_APP_API_KEY
@@ -23,6 +29,8 @@ const gateway = new ApolloGateway({
     },
     serviceList: [
         {name: LMS_SERVICE_NAME, url: LMS_SERVICE_URL},
+        {name: RESOURCES_SERVICE_NAME, url: RESOURCES_SERVICE_URL},
+        {name: BODY_OF_KNOWLEDGE_SERVICE_NAME, url: BODY_OF_KNOWLEDGE_SERVICE_URL},
     ],
 });
 
