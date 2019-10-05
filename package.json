@@ -1,5 +1,5 @@
 {
-  "name": "enterprise-admin-bff",
+  "name": "course-builder-bff",
   "version": "1.0.0",
   "description": "",
   "main": "gateway.js",
