@@ -1,5 +1,23 @@
 stages:
-- name: Build & Push
+- name: Build & Publish Production Release
+  when:
+    branch: master
+    event: [ tag, ]
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: salalemdockerhub/course-builder-bff:${CICD_GIT_TAG}
+      pushRemote: true
+      registry: index.docker.io
+    envFrom:
+    - sourceName: githubaccess
+      sourceKey: SSH_PRIVATE
+      targetKey: PLUGIN_BUILD_ARGS
+- name: Build & Publish Branch Release
+  when:
+    branch: [ master, staging, ]
+    event: [ push, ]
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
@@ -7,5 +25,9 @@ stages:
       tag: salalemdockerhub/course-builder-bff:${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
       pushRemote: true
       registry: index.docker.io
+    envFrom:
+    - sourceName: githubaccess
+      sourceKey: SSH_PRIVATE
+      targetKey: PLUGIN_BUILD_ARGS
 timeout: 60
 notification: {}
