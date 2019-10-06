@@ -37,7 +37,7 @@ const gateway = new ApolloGateway({
 
 const server = new ApolloServer({
     cors: {
-        origin: ['https://newcms.salalem.com', 'http://localhost:3000'],
+        origin: ['https://newcms.salalem.com', 'https://newcms.staging.salalem.com', 'http://localhost:3000'],
         credentials: true
     },
     context: ({req}) => ({
