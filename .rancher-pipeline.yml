@@ -1,8 +1,5 @@
 stages:
 - name: Build & Publish Production Release
-  when:
-    branch: master
-    event: [ tag, ]
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
@@ -14,10 +11,18 @@ stages:
     - sourceName: githubaccess
       sourceKey: SSH_PRIVATE
       targetKey: PLUGIN_BUILD_ARGS
-- name: Build & Publish Branch Release
+    when:
+      event:
+        include:
+        - tag
   when:
-    branch: [ master, staging, ]
-    event: [ push, ]
+    branch:
+      include:
+      - master
+    event:
+      include:
+      - tag
+- name: Build & Publish Branch Release
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
@@ -29,5 +34,20 @@ stages:
     - sourceName: githubaccess
       sourceKey: SSH_PRIVATE
       targetKey: PLUGIN_BUILD_ARGS
+    when:
+      branch:
+        include:
+        - staging
+      event:
+        include:
+        - push
+  when:
+    branch:
+      include:
+      - master
+      - staging
+    event:
+      include:
+      - push
 timeout: 60
 notification: {}
