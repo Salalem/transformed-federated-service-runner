@@ -24,6 +24,9 @@ const gateway = new ApolloGateway({
                     request.http.headers.set('App-Api-Key', LMS_APP_API_KEY);
                     request.http.headers.set('Authorization', context.LMSAuthorization);
                 }
+                if (name === RESOURCES_SERVICE_NAME) {
+                    request.http.headers.set('Authorization', context.LMSAuthorization);
+                }
             },
         });
     },
