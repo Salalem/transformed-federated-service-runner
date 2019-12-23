@@ -21,7 +21,7 @@ const gateway = new ApolloGateway({
         return new RemoteGraphQLDataSource({
             url, willSendRequest({request, context}) {
                 if (typeof context.JWTAuthToken !== 'undefined' && context.JWTAuthToken !== null) {
-                    if (name === LMS_SERVICE_NAME || name == RESOURCES_SERVICE_NAME) {
+                    if (name === LMS_SERVICE_NAME || name == RESOURCES_SERVICE_NAME || name == BODY_OF_KNOWLEDGE_SERVICE_NAME) {
                         request.http.headers.set('Authorization', context.JWTAuthToken);
                     }
                 }
