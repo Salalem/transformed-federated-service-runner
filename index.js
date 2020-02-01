@@ -6,10 +6,11 @@ const {HttpLink} = require('apollo-link-http');
 
 const SERVICE_NAME = process.env.SERVICE_NAME || "quizzing"
 const SERVICE_URL = process.env.SERVICE_URL || "https://faker.graphqleditor.com/salalem/quizschema/graphql"
+const link = new HttpLink({uri: SERVICE_URL, fetch})
 
-introspectSchema(new HttpLink({uri: SERVICE_URL, fetch})).then((schema) => {
+introspectSchema(link).then((schema) => {
     new ApolloServer({
-        schema: transformSchemaFederation(makeRemoteExecutableSchema({schema}), {
+        schema: transformSchemaFederation(makeRemoteExecutableSchema({schema, link}), {
             Query: {
                 // Ensure the root queries of this schema show up the combined schema
                 extend: true,
