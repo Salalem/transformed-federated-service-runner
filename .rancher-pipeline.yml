@@ -4,13 +4,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: salalemdockerhub/course-builder-bff:${CICD_GIT_TAG}
+      tag: salalemdockerhub/transformed-federated-service-runner:${CICD_GIT_TAG}
       pushRemote: true
       registry: index.docker.io
-    envFrom:
-    - sourceName: githubaccess
-      sourceKey: SSH_PRIVATE
-      targetKey: PLUGIN_BUILD_ARGS
     when:
       event:
         include:
@@ -27,13 +23,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: salalemdockerhub/course-builder-bff:${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
+      tag: salalemdockerhub/transformed-federated-service-runner:${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
       pushRemote: true
       registry: index.docker.io
-    envFrom:
-    - sourceName: githubaccess
-      sourceKey: SSH_PRIVATE
-      targetKey: PLUGIN_BUILD_ARGS
     when:
       branch:
         include:
