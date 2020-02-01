@@ -1,28 +1,30 @@
 {
-  "name": "course-builder-bff",
+  "name": "transformed-federated-service-runner",
   "version": "1.0.0",
   "description": "",
-  "main": "gateway.js",
+  "main": "index.js",
   "dependencies": {
-    "@apollo/gateway": "^0.10.8",
-    "apollo-server": "^2.9.7",
-    "graphql": "^14.5.6"
+    "@apollo/federation": "^0.9.4",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.9.14",
+    "graphql-tools": "^4.0.5",
+    "graphql-transform-federation": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon gateway.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Salalem/course-builder-bff.git"
+    "url": "git+https://github.com/Salalem/transformed-federated-service-runner.git.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Salalem/course-builder-bff/issues"
+    "url": "https://github.com/Salalem/transformed-federated-service-runner.git/issues"
   },
-  "homepage": "https://github.com/Salalem/course-builder-bff#readme"
+  "homepage": "https://github.com/Salalem/transformed-federated-service-runner.git#readme"
 }

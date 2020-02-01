@@ -29,4 +29,4 @@ COPY . .
 #RUN chmod -R u+rx $SCRIPTS_PATH/*
 
 # Define ENTRYPOINT array with arguments for 'entrpoint.sh'.
-CMD ["node", "gateway.js"]
+CMD ["node", "index.js"]
