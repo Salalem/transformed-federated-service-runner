@@ -9,7 +9,7 @@
 FROM node:carbon
 
 # Define environment variables.
-ENV PROJECT_NAME "course-builder-bff"
+ENV PROJECT_NAME "transformed-federated-service-runner"
 ENV WORKSPACE_PATH "/workspace"
 ENV PROJECT_PATH $WORKSPACE_PATH/$PROJECT_NAME
 ENV SCRIPTS_PATH $PROJECT_PATH/Dockerfiles/scripts
